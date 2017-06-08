@@ -1,5 +1,18 @@
 'use strict';
 
 function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+  let ret = [];
+
+  collection.forEach(function (e) {
+    let pos = ret.findIndex(function (f) {
+      return f.key === e;
+    });
+    if(pos === -1){
+      ret.push({key:e,count:1});
+    }else{
+      ret[pos].count++;
+    }
+  });
+
+  return ret;
 }
